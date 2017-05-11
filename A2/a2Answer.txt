@@ -1,0 +1,21 @@
+Juan Nicolas Sevilla Siasoco
+jsia894
+8104859
+
+1.
+To run my program, you need to have drive.py and TinyDOS.py on the same place. Then in terminal, once you go to the correct location, just write the following on terminal once you get to the correct directory:
+python3 TinyDOS.py
+then type in, under the first ‘>’: 
+format drive1
+
+2.
+
+128 usable blocks. Make a directory for root so 128-1=127 usable blocks. Directory, if we maximise the blocks we get 12, one block can have 8 files. So, for directory 1, we have 12*8=96files, 12 of which use blocks, so 96files + 12blocks+1root=109 blocks used out of 128. 128-109=19 usable blocks left. Allocate 1 block with 8 files. So 1+8=9 used blocks. 19free-9used=10free blocks. Allocate another block to dir2. 10-1=9 blocks left. Use 8 of these for files. And add 1 file into the root directory. SO:
+Root has 1 file.
+Dir1 has 96
+Dir2 has 8+8 =16.
+Therefore: 1+96+16=113
+113 is the max number of files.
+
+3.
+My solution doesn’t work with multiple threads. This is because I work with lists, which is actually thread safe, but the contents I’m constantly changing is not thread safe. So therefore it isn’t. 
